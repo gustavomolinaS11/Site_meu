@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f4f4f4;
+    color: #1f1f1f;
+}
+
+.container {
+    width: 88%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.cabecalho {
+    background-color: #ffffff;
+    padding: 18px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.cabecalho .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-esquerda,
+.menu-direita {
+    display: flex;
+    gap: 25px;
+}
+
+.cabecalho a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.cabecalho a:hover {
+    color: #c40000;
+}
+
+.logo img {
+    width: 85px;
+    display: block;
+}
+
+.hero {
+    padding: 110px 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #111;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 28px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.botao {
+    display: inline-block;
+    background-color: #c40000;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: #950000;
+}
+
+.sobre,
+.servicos,
+.integracoes,
+.beneficios,
+.contato {
+    padding: 80px 0;
+}
+
+.sobre h2,
+.servicos h2,
+.integracoes h2,
+.beneficios h2,
+.contato h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.sobre p,
+.integracoes p,
+.contato > .container > p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #666;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.cards {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    flex: 1 1 300px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    color: #c40000;
+    font-size: 22px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.integracoes {
+    background-color: #ffffff;
+}
+
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.logos img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logos img:hover {
+    transform: scale(1.08);
+}
+
+.contato-info {
+    max-width: 700px;
+    margin: 40px auto 0;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.contato-info p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.contato-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contato-info strong {
+    color: #c40000;
+}
+
+.contato-info a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.contato-info a:hover {
+    color: #c40000;
+}
+
+.rodape {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+    .cabecalho .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu-esquerda,
+    .menu-direita {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .logos img {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+.carrossel-logos {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 40px;
+    position: relative;
+}
+
+.carrossel-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    animation: rolar-logos 35s linear infinite;
+}
+
+.carrossel-logos:hover .carrossel-track {
+    animation-play-state: paused;
+}
+
+.logo-item {
+    width: 120px;
+    min-height: 120px;
+    background-color: #fff;
+    border-radius: 14px;
+    padding: 16px 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+    transform: translateY(-4px);
+}
+
+.logo-item img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.logo-item span {
+    font-size: 14px;
+    color: #444;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.carrossel-logos::before,
+.carrossel-logos::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carrossel-logos::before {
+    left: 0;
+    background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.carrossel-logos::after {
+    right: 0;
+    background: linear-gradient(to left, #ffffff, transparent);
+}
+
+@keyframes rolar-logos {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.carrossel-logos::before,
+.carrossel-logos::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carrossel-logos::before {
+    left: 0;
+    background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.carrossel-logos::after {
+    right: 0;
+    background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.quem-somos {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.quem-somos h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.quem-somos p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #666;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.sobre {
+    background-color: #f4f4f4;
+}
+
+.quem-somos {
+    background-color: #ffffff;
+}
